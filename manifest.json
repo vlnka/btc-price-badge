@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Bitcoin Price Badge",
+  "description": "Hyperminimalistic extension that monitors real-time BTC-USD rate using Coinbase API",
+  "version": "1.0.1",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "img/btc-19.png",
+    "default_title": "Bitcoin Price Badge"
+  },
+  "icons": { 
+    "16": "img/btc-16.png",
+    "19": "img/btc-19.png",
+    "48": "img/btc-48.png",
+    "128": "img/btc-128.png"
+  },
+  "permissions": [
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://api.coinbase.com/"
+  ]
+}
