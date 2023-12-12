@@ -19,7 +19,7 @@ const fetchPrice = async () => {
 };
 
 fetchPrice();
-chrome.alarms.create('fetchPrice', { periodInMinutes: 1 });
+chrome.alarms.create('fetchPrice', { periodInMinutes: 0.5 });
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === 'fetchPrice') {
     fetchPrice();
