@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Bitcoin Price Badge",
   "description": "Hyperminimalistic extension that monitors real-time BTC-USD rate using Coinbase API",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "background": {
     "service_worker": "background.js"
   },
