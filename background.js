@@ -5,9 +5,9 @@ const setBadge = (amt) => {
   let scale = Math.floor(Math.log10(num));
   let unit = scale < 3 ? '' : scale < 6 ? 'k' : 'M';
   let divisor = scale < 3 ? 1 : scale < 6 ? 1e3 : 1e6;
-  let precision = scale % 3 === 2 ? 0 : 1;
+  let precision = scale < 1 ? 3 : scale < 2 ? 2 : scale < 3 ? 1 : scale % 3 === 2 ? 0 : 1;
 
-  let text = num < 100 ? num.toFixed(2) : num >= 1e8 ? "HIGH" : (num / divisor).toFixed(precision) + unit;
+  let text = num < 1 ? num.toPrecision(num < 0.001 ? 2 : 3) : num < 100 ? num.toFixed(2) : num >= 1e8 ? "HIGH" : (num / divisor).toFixed(precision) + unit;
 
   chrome.action.setBadgeText({ text });
 };
